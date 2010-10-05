@@ -1,0 +1,3 @@
+recursive-include django_inplaceadmin/media *
+recursive-include django_inplaceadmin/templates *
+recursive-include testproject/ *.py *.html

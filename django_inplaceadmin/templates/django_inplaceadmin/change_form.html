@@ -1,0 +1,5 @@
+<form action="{{ formAction }}" method="{{ formMethod }}" id="{{ formId }}" class="for-{{ addr }}">
+    {{ form.as_p }}
+    <input type="submit" name="{{ saveBtnName }}" value="{{ saveBtnText|title }}" />
+    <input type="submit" name="{{ cancelBtnName }}" value="{{ cancelBtnText|title }}" />
+</form>

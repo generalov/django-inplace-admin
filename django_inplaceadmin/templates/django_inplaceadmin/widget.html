@@ -1,0 +1,31 @@
+<link href="{{ MEDIA_URL }}django_inplaceadmin/inplaceadmin.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+(function(document) {
+
+function loadScript(url) {
+   var e = document.createElement("script");
+   e.src = url;
+   e.type="text/javascript";
+   document.getElementsByTagName("head")[0].appendChild(e);
+}
+
+// Don't load the jQuery library if the user has already
+if (typeof jQuery == "undefined") {
+    loadScript("http://code.jquery.com/jquery.min.js");
+}
+loadScript("{{ MEDIA_URL }}django_inplaceadmin/inplaceadmin.js");
+
+})(document);
+</script>
+
+<script type="text/javascript">
+(function($){
+
+    $(function(){
+	$('.{{ FIELD_CLASS }}').djangoClamEditable({urlBase: '{{ baseUrl }}'});
+    })
+
+})(jQuery)
+</script>
+

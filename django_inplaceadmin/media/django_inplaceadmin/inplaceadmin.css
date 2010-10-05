@@ -1,0 +1,13 @@
+.errorlist {
+    background-color: #cc0000;
+    color: #ffffff;
+}
+
+.field.editable {
+    background-color: #eee;
+}
+
+.editable:hover {
+    background-color: yellow;
+    color: #cc0000;
+}
