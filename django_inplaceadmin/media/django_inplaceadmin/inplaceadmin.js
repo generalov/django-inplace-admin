@@ -1,6 +1,5 @@
 (function ($) {
 
-    var FIELD_CLASS = 'field-value';
     var DEFAULTS =  {
 	urlBase: '/inplaceadmin/',
         formId: 'django_inplaceadmin',
@@ -11,10 +10,7 @@
     };
 
     function findFields(addr) {
-	var ms = addr.split('-');
-	var parts = [FIELD_CLASS, [ms[0], ms[1], ms[2]].join('-'), ms[3]];
-
-	return $('.' + parts.join('.'));
+	return $('[rel=' + addr + ']');
     }
 
     $.fn.djangoEditable = function (options) {
@@ -127,22 +123,12 @@
 
     $.fn.djangoEditable.defaults = DEFAULTS;
 
-    var fieldAddrRe = new RegExp(FIELD_CLASS + " ([^ ]+)-([^ ]+)-(\\d+) ([^ ]+)");
-
-    function addrFromString (str) {
-	if (!str) return false;
-	var ms = str.match(fieldAddrRe); 
-	var addr = ms ? ms.slice(1).join('-'): false;
-
-	return addr;
-    }
-
     $.fn.djangoClamEditable = function (options) {
         var opts = $.extend({}, $.fn.djangoEditable.defaults, options);
 	var r = {};
 
 	this.map(function (){
-	    var addr = addrFromString($(this).attr('class'));
+	    var addr = $(this).attr('rel');
 
 	    /// console.log(addr);
 	    if (addr) {

@@ -24,5 +24,5 @@ template.html :
 
     {% load inplaceadmin_tags %}
     <body>
-	<div class="{{ user|editable_field:'username' }}">{{ user.username }}</div>
+	<div class="inplaceadmin" rel="{{ user|editable_field:'username' }}">{{ user.username }}</div>
     </body>

@@ -7,19 +7,12 @@
     </head>
     <body>
 	{% for i in "12345" %}
-	<table>
-	    {% for user in object_list %}
-	    <tr>
-		<td>Username:</td>
-		<td><div class="{{ user|editable_field:'username' }}">{{ user.username }}</div></td>
-	    </tr>
-	    <tr>
-		<td>Email:</td>
-		<td><div class="{{ user|editable_field:'email' }}">{{ user.email }}</div></td>
-	    </tr>
+	<dl>
+	    {% for site in object_list %}
+	    <dt class="inplaceadmin" rel="{{ site|editable_field:'name' }}">{{ site.name }}</dt>
+	    <dd class="inplaceadmin" rel="{{ site|editable_field:'domain' }}">{{ site.domain }}</dd>
 	    {% endfor %}
-	</table>
-	<br/>
+	</dl>
 	{% endfor %}
     </body>
 </html>

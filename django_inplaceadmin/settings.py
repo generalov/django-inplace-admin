@@ -3,7 +3,7 @@ from django.conf import settings
 
 
 APP_LABEL = 'django_inplaceadmin'
-FIELD_CLASS = 'field-value'
+FIELD_CLASS = 'inplaceadmin'
 INTERNAL_IPS = settings.INTERNAL_IPS
 MEDIA_URL = settings.MEDIA_URL
 ROOT_URLCONF = settings.ROOT_URLCONF
