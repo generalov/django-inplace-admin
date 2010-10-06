@@ -15,7 +15,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': path('data.db'),        # Or path to database file if using sqlite3.
+        'NAME': ':memory:',        # Or path to database file if using sqlite3.
     }
 }
 
@@ -95,3 +95,4 @@ INSTALLED_APPS = (
 )
 
 DJANGO_INPLACEADMIN_ENABLED = True
+
